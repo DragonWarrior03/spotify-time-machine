@@ -1,0 +1,56 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% include "header.html" %}
+
+<!-- Page Header -->
+
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-login bg.png') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Your Playlists</h1>
+            <span class="subheading">Go  back  in  Time.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<section class="black-section">
+    <div class="container">
+        <div class="row">
+            <table class="table mx-auto playlist-table">
+          <thead>
+            <tr>
+              <th scope="col" class="col-heading">Year</th>
+                <th scope="col" class="col-heading">Month</th>
+                <th scope="col" class="col-heading">Date</th>
+              <th scope="col" class="col-heading">URL</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for playlist in current_user.playlists %}
+            <tr>
+              <td class="table-row">{{playlist.year}}</td>
+              <td class="table-row">{{playlist.month}}</td>
+              <td class="table-row">{{playlist.date}}</td>
+                <td class="table-row"><a href="{{playlist.url}}">link</a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+    </table>
+        </div>
+    </div>
+
+
+</section>
+
+
+
+
+
+{% include "footer.html" %}
+
+
+

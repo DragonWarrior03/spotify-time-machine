@@ -1,0 +1,45 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% include "header.html" %}
+
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-login bg.png') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Register</h1>
+<!--              <span class="subheading"></span>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<section class="black-section">
+    <div class="container">
+        <div class="col">
+            <div class="register-form mx-auto">
+                <div class="flash">
+                {% with messages=get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p style="color:red">{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                </div>
+                {{ wtf.quick_form(form=form,button_map={"submit":"success"}) }}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+{% include "footer.html" %}

@@ -1,0 +1,239 @@
+::selection {
+  color: #fff;
+  background: #1DB954;
+  text-shadow: none;
+}
+
+
+/* Navbar */
+.navbar-custom .navbar-text{
+    color:#ffffff;
+}
+
+#mainNav {
+  position: absolute;
+  border-bottom: 0px solid #e9ecef;
+  background-color: black;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#mainNav .navbar-brand {
+  font-weight: 800;
+}
+
+#mainNav .navbar-toggler {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 13px;
+  text-transform: uppercase;
+  color: #343a40;
+}
+
+#mainNav .navbar-nav > li.nav-item > a {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 992px) {
+  #mainNav {
+    border-bottom: 0px solid transparent;
+    background: transparent;
+  }
+  #mainNav .navbar-brand {
+    padding: 10px 20px;
+    color: #ffffff;
+  }
+  #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  #mainNav .navbar-nav > li.nav-item > a {
+    padding: 10px 20px;
+    color: #ffffff;
+  }
+  #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.navbar .navbar-toggler{
+background-color:#1DB954;
+}
+
+.navbar .navbar-toggler-icon{
+background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.dropdown-menu .navbar-text{
+color:#000000;
+}
+
+/* Header */
+
+header.masthead {
+  margin-bottom: 50px;
+  background: no-repeat center center;
+  background-color: #868e96;
+  background-attachment: scroll;
+  position: relative;
+  background-size: cover;
+  margin-bottom:0px;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #212529;
+  opacity: 0.5;
+}
+
+header.masthead .page-heading,
+header.masthead .post-heading,
+header.masthead .site-heading {
+  padding: 200px 0 150px;
+  color: white;
+}
+
+header.masthead .page-heading,
+header.masthead .site-heading {
+  text-align: center;
+}
+
+header.masthead .page-heading h1,
+header.masthead .site-heading h1 {
+  font-size: 60px;
+  margin-top: 0;
+  font-weight:700;
+  font-family:Montserrat;
+}
+
+
+header.masthead .page-heading .subheading,
+header.masthead .site-heading .subheading {
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin: 10px 0 0;
+  font-family: "Dancing Script";
+}
+
+.black-section{
+background-color: #121212;
+padding:100px 0;
+}
+
+/* Home */
+
+.home-text h1{
+color: #1DB954;
+text-align:center;
+font-weight:500;
+font-size:40px;
+font-family:Montserrat;
+}
+
+.home-form{
+color: #1DB954;
+width:50%;
+}
+
+/* Register */
+.register-form{
+color: #1DB954;
+width:50%;
+}
+
+
+
+
+/* About */
+.black-section .about-text{
+color:#ffffff;
+font-family:"Ubuntu";
+font-size:1.2rem;
+}
+
+/* Login */
+.login-text h1{
+color: #1DB954;
+text-align:center;
+font-weight:500;
+font-size:40px;
+font-family:Montserrat;
+}
+
+.login-form{
+color: #1DB954;
+width:50%;
+}
+
+/* Settings */
+
+.settings-text{
+color: #1DB954;
+text-align:left;
+font-weight:500;
+font-size:2.2rem;
+font-family:Montserrat;
+}
+
+.settings-form{
+color: #1DB954;
+width:50%;
+}
+
+.settings-hr{
+height:50px;
+}
+
+/* Playlist */
+.playlist-table .col-heading{
+color:#1DB954;
+font-family:"Ubuntu";
+font-size:1.25rem;
+}
+
+.playlist-table .table-row{
+color:#1DB954;
+font-family:"Ubuntu";
+}
+
+.playlist-table .table-row a{
+color:#1DB954;
+font-family:"Ubuntu";
+}
+
+
+.flash{
+text-align:center;
+}
+
+
+.btn {
+background-color:#1DB954;
+font-size: 13px;
+font-weight:700;
+padding: 15px 25px;
+letter-spacing: 1px;
+text-transform: uppercase;
+border-radius: 0;
+font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+
+/* Footer */
+footer{
+background-color:#121212;
+text-align:center;
+}
+
+.copyright{
+color: #1DB954;
+font-family:"Ubuntu";
+}

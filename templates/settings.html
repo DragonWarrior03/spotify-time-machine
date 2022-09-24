@@ -1,0 +1,43 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% include "header.html" %}
+
+
+<!-- Page Header -->
+
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-login bg.png') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Settings</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<section class="black-section">
+    <div class="container">
+        <div class="col">
+            <div class="settings-form mx-auto">
+                <h2 class="settings-text">Change Name</h2>
+                <hr>
+                {{wtf.quick_form(form=name_form,novalidate=True,button_map={"submit":"success"})}}
+            </div>
+            <hr class="settings-hr">
+            <div class="settings-form mx-auto">
+                <h2 class="settings-text">Change Password</h2>
+                <hr>
+                {{wtf.quick_form(form=pass_form,novalidate=True,button_map={"submit":"success"})}}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+{% include "footer.html" %}

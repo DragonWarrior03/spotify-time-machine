@@ -1,0 +1,58 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% include "header.html" %}
+
+<!-- Page Header -->
+
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-login bg.png') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Spotify Time Machine</h1>
+            <span class="subheading">Go  back  in  Time.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<section class="black-section">
+    <div class="container">
+    <div class="col">
+        {% if not logged_in %}
+            <div class="home-text">
+            <h1>Login</h1>
+            </div>
+            <div class="flash mx-auto">
+            {% with messages=get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p style="color:red">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+                </div>
+                    <div class="home-form mx-auto">
+                    {{ wtf.quick_form(form=login_form, novalidate=True, button_map={"submit": "success"}) }}
+                    </div>
+        {% else %}
+        <div class="home-text">
+            <h1>Where To</h1>
+            </div>
+            {% with messages=get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p style="color:red">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        <div class="home-form mx-auto">
+        {{ wtf.quick_form(form=play_form, novalidate=True, button_map={"submit": "success"}) }}
+        </div>
+        {% endif %}
+</div>
+    </div>
+ </section>
+
+{% include "footer.html" %}

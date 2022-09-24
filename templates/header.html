@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color:#121212">
+<head>
+    <meta charset="UTF-8">
+    <title>Time Machine</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@100;400;700;900&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+     <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+ <!-- Navigation -->
+ <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+  <a class="navbar-brand navbar-text" href="{{url_for('home')}}">Time Machine</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link navbar-text" href="{{url_for('home')}}">Home</a>
+      </li>
+        <li class="nav-item">
+            <a class="nav-link navbar-text" href="{{url_for('about')}}">About</a>
+        </li>
+        {% if not logged_in %}
+      <li class="nav-item">
+        <a class="nav-link navbar-text" href="{{url_for('login')}}">Login</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link navbar-text" href="{{url_for('register')}}">Register</a>
+      </li>
+        {% endif %}
+        <li class="nav-item">
+        <a class="nav-link navbar-text" href="{{url_for('logout')}}">Logout</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle navbar-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Profile
+        </a>
+        <div class="dropdown-menu navbar-custom" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item navbar-text" href="{{url_for('playlist')}}">Playlists</a>
+          <a class="dropdown-item navbar-text" href="{{url_for('settings')}}">Settings</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

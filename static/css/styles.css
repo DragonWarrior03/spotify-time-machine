@@ -147,7 +147,7 @@ header.masthead .site-heading h1 {
   font-family:Montserrat;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1080px) {
   header.masthead .page-heading,
   header.masthead .post-heading,
   header.masthead .site-heading {
@@ -177,7 +177,7 @@ header.masthead .site-heading .subheading {
   font-family: "Dancing Script";
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1080px) {
   header.masthead .page-heading h1,
   header.masthead .site-heading h1 {
     font-size: 80px;

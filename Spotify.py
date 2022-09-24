@@ -1,13 +1,15 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth,SpotifyClientCredentials
 from Bill_Board import obtain_bill_board
-import pprint
-import json
 import os
 
 class spotify:
     # # ==================== Get Song Names =======================
     def __init__(self,date,year):
+        self.playlist = None
+        self.user_playlist = None
+        self.user_id = None
+        self.sp = None
         self.date=date
         self.billboard=obtain_bill_board(date=self.date)
         self.songs=self.billboard.all_songs[0:100]
@@ -36,14 +38,6 @@ class spotify:
         )
         )
 
-        spotify1=spotipy.Spotify(auth_manager=SpotifyOAuth(
-            client_id=client_id,
-            client_secret=client_secret,
-            redirect_uri=redirect_uri,
-            cache_path="token1.txt",
-            scope="playlist-read-private",
-            show_dialog=True
-        ))
 
         self.sp=spotify.current_user()
         self.user_id = self.sp["id"]
@@ -57,13 +51,12 @@ class spotify:
                 print(f"{self.songs[n]} by {self.artists[n]} does not exist in spotify. Skipped")
 
         # # ==================== Create Playlist =======================
-        self.playlist=spotify.user_playlist_create(user=self.user_id,name=f"{self.date} Billboard 100" , description=f"Enjoy these top 100 songs from the year {self.year}",public=False)
+        self.playlist=spotify.user_playlist_create(user=self.user_id,name=f"{self.date} Billboard 100" , description=f"Enjoy these top 100 songs from the year {self.year}",public=True)
         playlist_id=self.playlist["id"]
 
         for uri in song_uris:
             spotify.playlist_add_items(playlist_id=playlist_id,items=[uri])
 
-        self.user_playlist=spotify1.current_user_playlists(limit="50",offset="0")
 
 
 

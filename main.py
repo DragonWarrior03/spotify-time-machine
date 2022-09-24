@@ -17,7 +17,7 @@ from sqlalchemy import Table, Column, Integer, ForeignKey
 
 
 
-
+os.environ["SECRET_KEY"]="38493290320383843"
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
@@ -116,7 +116,6 @@ def home():
         new_playlist.year=year
         new_playlist.author=current_user
         d=year+"-"+month+"-"+date
-        print(type(d))
         s=spotify(date=d,year=year)
         s.create_playlist()
         playlist=s.playlist["external_urls"]["spotify"]

@@ -42,7 +42,7 @@ class spotify:
         self.sp=spotify.current_user()
         self.user_id = self.sp["id"]
         song_uris=[]
-        for n in range(0,65):
+        for n in range(0,50):
             result = spotify.search(q=f"{self.songs[n]} {self.artists[n]} {self.year}", type="track",limit="1")
             try:
                 uri = result["tracks"]["items"][0]["uri"]
@@ -51,7 +51,7 @@ class spotify:
                 print(f"{self.songs[n]} by {self.artists[n]} does not exist in spotify. Skipped")
 
         # # ==================== Create Playlist =======================
-        self.playlist=spotify.user_playlist_create(user=self.user_id,name=f"{self.date} Billboard 100" , description=f"Enjoy these top 100 songs from the year {self.year}",public=True)
+        self.playlist=spotify.user_playlist_create(user=self.user_id,name=f"{self.date} Billboard 100" , description=f"Enjoy these top 50 songs from the year {self.year}",public=True)
         playlist_id=self.playlist["id"]
 
         for uri in song_uris:

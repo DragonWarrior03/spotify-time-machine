@@ -17,9 +17,9 @@ class spotify:
 
 
     def create_playlist(self):
-        client_id = "426582dc0c8b4e9fb57248f577261c63"
+        client_id = "91b0b7d20c864eda884a5856f97c0c59"
         os.environ["SPOTIPY_CLIENT_ID"]=client_id
-        client_secret = "111e82e884054803b6298d7c84d552e4"
+        client_secret = "dde671591e9341c5a953a274f7389b14"
         os.environ["SPOTIPY_CLIENT_SECRET"]=client_secret
         redirect_uri = "http://example.com"
         os.environ["SPOTIPY_REDIRECT_URI"]=redirect_uri

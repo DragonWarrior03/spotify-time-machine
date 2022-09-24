@@ -21,7 +21,8 @@ class obtain_bill_board:
             text = item.getText()
             text = text.replace("\n\t\n\t", "")
             text = text.replace("\n", "")
-            if text!="RE-ENTRY":
+            text=text.replace("%2C","")
+            if text!="RE-ENTRY" and text!="NEW":
                 self.all_artists.append(text)
 
         for n in range(6):

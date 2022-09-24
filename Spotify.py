@@ -42,7 +42,7 @@ class spotify:
         self.sp=spotify.current_user()
         self.user_id = self.sp["id"]
         song_uris=[]
-        for n in range(0,51):
+        for n in range(0,65):
             result = spotify.search(q=f"{self.songs[n]} {self.artists[n]} {self.year}", type="track",limit="1")
             try:
                 uri = result["tracks"]["items"][0]["uri"]

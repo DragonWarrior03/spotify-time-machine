@@ -1,2 +1,2 @@
 web: gunicorn main:app
-gunicorn hello:app --timeout 40
+gunicorn hello:app --timeout 120

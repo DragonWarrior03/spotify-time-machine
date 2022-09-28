@@ -17,6 +17,7 @@ from sqlalchemy import Table, Column, Integer, ForeignKey
 
 
 
+
 os.environ["SECRET_KEY"]="38493290320383843"
 
 app = Flask(__name__)
@@ -202,6 +203,8 @@ def logout():
 @login_required
 def playlist():
     return render_template('playlist.html',logged_in=current_user.is_authenticated)
+
+
 
 
 if __name__=="__main__":
